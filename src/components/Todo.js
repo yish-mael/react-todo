@@ -5,8 +5,12 @@ import Backdrop from "./Backdrop";
 function Todo(props) {
     const [ getModalStatus, setModalStatus ] = useState(false);
       
-    function deleteHandler() {
+    function deleteModalHandler() {
         setModalStatus(true);
+    }
+
+    function closeModalHandler() {
+        setModalStatus(false);
     }
 
     return (
@@ -14,11 +18,11 @@ function Todo(props) {
             <div className='card'>
             <h2>{props.text}</h2>
             <div className='actions'>
-                <button className='btn' onClick={deleteHandler}>Delete</button>
+                <button className='btn' onClick={deleteModalHandler}>Delete</button>
             </div>
             </div>
-            {getModalStatus && <Modal />}
-            {getModalStatus && <Backdrop />}
+            {getModalStatus && <Modal onCancel={closeModalHandler} onConfirm={closeModalHandler} />}
+            {getModalStatus && <Backdrop onCancel={closeModalHandler} />}
 
         </div>
     );
