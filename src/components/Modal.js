@@ -8,4 +8,4 @@ function  Modal() {
     );
 }
 
-export default Modal
+export default Modal;
