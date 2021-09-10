@@ -28,6 +28,11 @@ h1, h2 {
     border-color: #9c1458;
 }
 
+.btn--alt {
+    background-color: transparent;
+    color: #800040;
+}
+
 .btn--alt:hover {
     background-color: #f8dae9;
 }
@@ -54,5 +59,15 @@ h1, h2 {
     z-index: 10;
     position: fixed;
     top: 20vh;
-    left: cal(50% - 15rem)
+    left: calc(50% - 15rem)
+}
+
+.backdrop {
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
 }
